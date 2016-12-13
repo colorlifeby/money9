@@ -21,6 +21,8 @@ urlpatterns = [
     url(r'^template/', TemplateView.as_view(template_name="main_page.html")),
     url(r'^$', views.main_page, name='main_page'),
     url(r'^register/$', views.register_view, name='register_view'),
+    url(r'^logout/$', views.logout_view, name='logout_view'),
+    url(r'^login/$', views.login_view, name='login_view'),
 ]
 
 

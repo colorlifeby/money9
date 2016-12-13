@@ -2,57 +2,67 @@
 
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    color:#00B624;
-    background: #191919;
+    font-size: 12px;
+    color:#333
 }
 
 p {
-    padding: 10px;
+    padding: 3px;
+}
+#username {
+    font-weight: bold;
 }
 
 #wrapper {
-    width: 100%;
-    min-width: 1000px;
-    max-width: 1900px;
     margin: 0 auto;
+    width: 1140px;
 }
 
 #header {
     float: left;
     height: 75px;
-    width: 100%;
-    background: #101010;
+    width: 1140px;
+    background: #FF6633;
+}
+
+#logoblock {
+    float: left;
+    height: 100%;
+    width: 840px;
+    background: #66CC33;
+}
+
+#userblock {
+    float: right;
+    height: 100%;
+    width: 300px;
+    background: #999999;
+	text-align: center;	
 }
 
 #navigation {
     float: left;
     height: 40px;
-    width: 100%;
+    width: 1140px;
     background: #FFCC33;
 }
 
-#contentliquid {
-    float: left;
-    width: 100%;
-}
-
 #content {
-    background: #191919;
-    margin-left: 250px;
+    float: left;
+    background: #FFFFFF;
+    width: 910px;
 }
 
 #leftcolumn {
+    background: #33CCFF;
+    width: 230px;
     float: left;
-    background: #CC33FF;
-    width: 250px;
-    margin-left: -100%;
 }
 
 #footer {
     height: 40px;
-    width: 100%;
-    background: #262526;
+    width: 1140px;
+    background: #33FF66;
     clear: both;
 }
 

@@ -9,19 +9,24 @@
 <body>
     <div id="wrapper">
         <div id="header">
-            <p>{% block header %}<h5>Money9</h5>{% endblock %}</p>
-        </div>
+		<div id="logoblock">
+            {% block header %}<h5>Money9</h5>{% endblock %}
+		</div>	
+		<div id="userblock">
+			{% block userblock %}
+			{% endblock %}
+		</div>
         <div id="navigation">
             <p>{% block mainmenu %}{% endblock %}</p>
         </div>
-        <div id="contentliquid"><div id="content">
-           <p>{% block content %}{% endblock %}</p>
-       </div></div>
         <div id="leftcolumn">
             <p>{% block leftcol %}{% endblock %}</p>
-        </div>
+        </div>		
+        <div id="content">
+           <p>{% block content %}{% endblock %}</p>
+       </div>
         <div id="footer">
-             User: {{ user }} ::: Session: {{ session }}
+             <p>User: {{ user }} ::: Session: {{ session }}</p>
         </div>
     </div>
 </body>

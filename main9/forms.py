@@ -49,3 +49,33 @@ class RegisterForm(forms.Form):
         user.save()
         return user
 
+class LoginForm(forms.Form):
+    username = forms.CharField( max_length=100, 
+	                            required=False,
+								label='Имя пользователя')
+    password = forms.CharField(widget=forms.PasswordInput, 
+	                           required=False,
+							   label='Пароль')
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if not username:
+            raise forms.ValidationError('Не задано имя пользователя')
+        return username
+
+    def clean_password(self):
+        password = self.cleaned_data.get('password')
+        if not password:
+            raise forms.ValidationError('Не указан пароль')
+        return password
+
+    def clean(self):
+        username = self.cleaned_data.get('username')
+        password = self.cleaned_data.get('password')
+        try:
+            user = User.objects.get(username=username)
+        except User.DoesNotExist:
+            raise forms.ValidationError('Неверное имя пользователя или пароль1')
+        if not user.check_password(password):
+            raise forms.ValidationError('Неверное имя пользователя или пароль2')
+			
