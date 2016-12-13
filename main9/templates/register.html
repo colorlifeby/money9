@@ -1,0 +1,18 @@
+{% extends "base_page.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+<form method="post" action="/register/">
+<fieldset>
+{% csrf_token %}
+{{ form.as_p }}
+</fieldset>
+<button type="submit">Зарегистрироваться</button>
+</form>
+<div>User: {{ user }}</div>
+<div>Session: {{ session }}</div>
+<div><a href="/">Return to main page</a></div>
+{% endblock %}

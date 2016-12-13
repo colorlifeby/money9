@@ -1,0 +1,58 @@
+@import url("reset.css");
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color:#00B624;
+    background: #191919;
+}
+
+p {
+    padding: 10px;
+}
+
+#wrapper {
+    width: 100%;
+    min-width: 1000px;
+    max-width: 1900px;
+    margin: 0 auto;
+}
+
+#header {
+    float: left;
+    height: 75px;
+    width: 100%;
+    background: #101010;
+}
+
+#navigation {
+    float: left;
+    height: 40px;
+    width: 100%;
+    background: #FFCC33;
+}
+
+#contentliquid {
+    float: left;
+    width: 100%;
+}
+
+#content {
+    background: #191919;
+    margin-left: 250px;
+}
+
+#leftcolumn {
+    float: left;
+    background: #CC33FF;
+    width: 250px;
+    margin-left: -100%;
+}
+
+#footer {
+    height: 40px;
+    width: 100%;
+    background: #262526;
+    clear: both;
+}
+
