@@ -51,11 +51,11 @@ class RegisterForm(forms.Form):
 
 class LoginForm(forms.Form):
     username = forms.CharField( max_length=100, 
-	                            required=False,
-								label='Имя пользователя')
+                                required=False,
+                                label='Имя пользователя')
     password = forms.CharField(widget=forms.PasswordInput, 
-	                           required=False,
-							   label='Пароль')
+                               required=False,
+                               label='Пароль')
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
@@ -78,4 +78,37 @@ class LoginForm(forms.Form):
             raise forms.ValidationError('Неверное имя пользователя или пароль1')
         if not user.check_password(password):
             raise forms.ValidationError('Неверное имя пользователя или пароль2')
-			
+
+            
+class UserProfileForm(forms.Form):
+    emailnew = forms.EmailField(required=False,
+                                 label='Новый E-mail')
+    passwordnew = forms.CharField(widget=forms.PasswordInput, 
+                                  required=False,
+                                  label='Новый пароль')
+    password = forms.CharField(widget=forms.PasswordInput, 
+                               required=False,
+                               label='Текущий пароль')                             
+
+    def clean_emailnew(self):
+        email = self.cleaned_data.get('emailnew')
+#        if not emailnew:
+#            raise forms.ValidationError('Не указан адрес электронной почты')
+        try:
+            User.objects.get(email=email)
+            raise forms.ValidationError('Email уже используется')
+        except User.DoesNotExist:
+            pass
+        return email            
+        
+    def clean_passwordnew(self):
+        password = self.cleaned_data.get('passwordnew')
+#        if not password:
+#            raise forms.ValidationError('Не указан пароль')
+        return password
+        
+    def clean_password(self):
+        password = self.cleaned_data.get('password')
+#        if not password:
+#            raise forms.ValidationError('Не указан пароль')
+        return password             

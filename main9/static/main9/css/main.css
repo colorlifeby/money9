@@ -1,4 +1,4 @@
-@import url("reset.css");
+@import url("reset.css"); 
 
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -7,10 +7,7 @@ body {
 }
 
 p {
-    padding: 3px;
-}
-#username {
-    font-weight: bold;
+    padding: 10px;
 }
 
 #wrapper {
@@ -25,6 +22,35 @@ p {
     background: #FF6633;
 }
 
+#navigation {
+    float: left;
+    height: 40px;
+    width: 1140px;
+    background: #FFCC33;
+}
+
+/* #content {
+    float: left;
+    background: #FFFFFF;
+    width: 910px;
+} */
+
+#content {
+    background: #FFFFFF;
+    width: 1140px;
+}
+/* #leftcolumn {
+    background: #33CCFF;
+    width: 230px;
+    float: left;
+}
+*/
+#footer {
+    height: 40px;
+    width: 1140px;
+    background: #33FF66;
+    clear: both;
+}
 #logoblock {
     float: left;
     height: 100%;
@@ -40,29 +66,43 @@ p {
 	text-align: center;	
 }
 
-#navigation {
-    float: left;
-    height: 40px;
-    width: 1140px;
-    background: #FFCC33;
+#username {
+    font-weight: bold;
 }
 
-#content {
-    float: left;
-    background: #FFFFFF;
-    width: 910px;
-}
+ul.errorlist {
+    margin: 0;
+    padding: 0;
+    }
+.errorlist li {
+    background-color: red;
+    color: white;
+    display: block;
+    font-size: 10px;
+    margin: 0 0 3px;
+    padding: 4px 5px;
+    }
 
-#leftcolumn {
-    background: #33CCFF;
-    width: 230px;
-    float: left;
+.align_center
+{
+position: relative;
+width: 100%;
 }
-
-#footer {
-    height: 40px;
-    width: 1140px;
-    background: #33FF66;
-    clear: both;
+.align_center:after
+{
+content: '';
+display: block;
+clear: both;
 }
-
+.align_center_to_left
+{
+position: relative;
+right: 50%;
+float: right;
+}
+.align_center_to_right
+{
+position: relative;
+z-index: 1;
+right: -50%;
+}

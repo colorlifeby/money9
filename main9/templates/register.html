@@ -1,18 +1,76 @@
 {% extends "base_page.html" %}
-
-{% block title %}
-{{title}}
-{% endblock %}
-
 {% block content %}
+<div class="align_center">
+&nbsp;
+<div class="align_center_to_left">
+        <div class="align_center_to_right" style="margin: 1em 0; border: 1px dashed #DDDDDD;">
+<table>
+    <tr>
+		<td  colspan="2" align="center" bgcolor="#DDDDDD">
+<p>Создание учетной записи пользователя<br>(все поля обязательны)</p>
+		</td>
+	</tr>
 <form method="post" action="/register/">
-<fieldset>
+        <fieldset>	
 {% csrf_token %}
-{{ form.as_p }}
+    <tr>
+		<td  colspan="2" align="center">
+			{{ form.non_field_errors }}
+		</td>
+	</tr>
+    <tr>
+		<td  colspan="2" align="center">
+			{{ form.username.errors }}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>{{form.username.label}}</p>
+		</td>
+		<td>
+			{{form.username}}
+		</td>
+	</tr>
+    <tr>
+		<td  colspan="2" align="center">
+			{{ form.password.errors }}
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<p>{{form.password.label}}</p>
+		</td>
+		<td>
+			{{form.password}}
+		</td>
+	</tr>
+    <tr>
+		<td  colspan="2" align="center">
+			{{ form.email.errors }}
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<p>{{form.email.label}}</p>
+		</td>
+		<td>
+			{{form.email}}
+		</td>
+	</tr>	
 </fieldset>
-<button type="submit">Зарегистрироваться</button>
+	<tr>
+		<td colspan="2" align="center">
+			<button type="submit">Зарегистрироваться</button><br>&nbsp;
+		</td>
+	</tr>
 </form>
-<div>User: {{ user }}</div>
-<div>Session: {{ session }}</div>
-<div><a href="/">Return to main page</a></div>
-{% endblock %}
+	<tr>
+		<td colspan="2" align="center" bgcolor="#DDDDDD">
+<p><a href="/">На главную страницу<a></p>
+        </td>
+	</tr>
+</table>
+</div>
+</div>
+</div>
+{% endblock %}	

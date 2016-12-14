@@ -48,9 +48,21 @@ def login_view(request):
         form = forms9.LoginForm()
     return render(request, 'login.html', {'form': form,
                                           'user': request.user,
-                                          'session': request.session, }) 											 
-											 
+                                          'session': request.session, })                                             
+                                             
 def logout_view(request):
             logout(request)
             return HttpResponseRedirect('/')
-			
+            
+
+@login_required(login_url='/login/')
+def user_profile(request):
+    if request.method == "POST":
+        form = forms9.UserProfileForm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect('/')
+    else:
+        form = forms9.UserProfileForm()
+    return render(request, 'profile.html', {'form': form,
+                                            'user': request.user,
+                                            'session': request.session, })
