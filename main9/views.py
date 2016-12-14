@@ -59,10 +59,22 @@ def logout_view(request):
 def user_profile(request):
     if request.method == "POST":
         form = forms9.UserProfileForm(request.POST)
+#        print request.user
         if form.is_valid():
+            emailnew = form.cleaned_data["emailnew"]
+            passwordnew = form.cleaned_data["passwordnew"]		
+            u = request.user
+            u.email=emailnew
+            u.save()
             return HttpResponseRedirect('/')
     else:
         form = forms9.UserProfileForm()
     return render(request, 'profile.html', {'form': form,
                                             'user': request.user,
                                             'session': request.session, })
+											
+											
+											
+											
+											
+											

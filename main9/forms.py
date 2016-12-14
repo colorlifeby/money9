@@ -109,6 +109,13 @@ class UserProfileForm(forms.Form):
         
     def clean_password(self):
         password = self.cleaned_data.get('password')
-#        if not password:
-#            raise forms.ValidationError('Не указан пароль')
-        return password             
+        if not password:
+            raise forms.ValidationError('Не указан текущий пароль')
+        return password
+		
+    def clean(self):
+        emailnew = self.cleaned_data.get('emailnew')
+        passwordnew = self.cleaned_data.get('passwordnew')
+        password = self.cleaned_data.get('password')
+        if not emailnew and not passwordnew:
+            raise forms.ValidationError('Новые поля пустые!')        

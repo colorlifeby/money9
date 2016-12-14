@@ -7,10 +7,10 @@
 <table>
     <tr>
 		<td  colspan="2" align="center" bgcolor="#DDDDDD">
-<p>Для продолжения работы необходимо войти <br>в систему под своей учетной записью</p>
+<p>Редактирование профиля пользователя</p>
 		</td>
 	</tr>
-<form method="post" action="/login/">
+<form method="post" action="/userprofile/">
         <fieldset>	
 {% csrf_token %}
     <tr>
@@ -18,17 +18,38 @@
 			{{ form.non_field_errors }}
 		</td>
 	</tr>
+	<tr>
+		<td>
+			<p>Текущий E-mail</p>
+		</td>
+		<td>
+			{{user.email}}
+		</td>
+	</tr>	
     <tr>
 		<td  colspan="2" align="center">
-			{{ form.username.errors }}
+			{{ form.emailnew.errors }}
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<p>{{form.username.label}}</p>
+			<p>{{form.emailnew.label}}</p>
 		</td>
 		<td>
-			{{form.username}}
+			{{form.emailnew}}
+		</td>
+	</tr>
+    <tr>
+		<td  colspan="2" align="center">
+			{{ form.passwordnew.errors }}
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<p>{{form.passwordnew.label}}</p>
+		</td>
+		<td>
+			{{form.passwordnew}}
 		</td>
 	</tr>
     <tr>
@@ -43,22 +64,17 @@
 		<td>
 			{{form.password}}
 		</td>
-	</tr>
+	</tr>	
 </fieldset>
 	<tr>
 		<td colspan="2" align="center">
-			<button type="submit">Войти</button><br>&nbsp;
+			<button type="submit">Сохранить</button><br>&nbsp;
 		</td>
 	</tr>
 </form>
 	<tr>
 		<td colspan="2" align="center" bgcolor="#DDDDDD">
-<p>Нет учетной записи? <a href="/register/">Зарегистрироваться!<a></p>
-        </td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center" bgcolor="#DDDDDD">	
-<p>Забыли пароль? <a href="/resetpassword/">Сбросить пароль</a></p>
+<p><a href="/">На главную<a></p>
         </td>
 	</tr>
 </table>

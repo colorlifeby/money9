@@ -10,10 +10,17 @@
     <div id="wrapper">
         <div id="header">
 		<div id="logoblock">
+			<img src="/static/main9/images/9bit75x75.png"/>
+			<img src="/static/main9/images/budg.png"/>
             {% block header %}<h5>Money9</h5>{% endblock %}
 		</div>	
 		<div id="userblock">
 			{% block userblock %}
+			{% if user.is_authenticated %}
+				<p>Пользователь:<br>
+				<span id="username">{{user}}</span></p> 
+				<p><a href="/logout/">Выход</a> / <a href="/userprofile/">Профиль</a></p>
+			{% endif %}			
 			{% endblock %}
 		</div>
         <div id="navigation">

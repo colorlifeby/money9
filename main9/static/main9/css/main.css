@@ -48,21 +48,21 @@ p {
 #footer {
     height: 40px;
     width: 1140px;
-    background: #33FF66;
+    background: #DDE1E2;
     clear: both;
 }
 #logoblock {
     float: left;
     height: 100%;
     width: 840px;
-    background: #66CC33;
+    background: #DDE1E2;
 }
 
 #userblock {
     float: right;
     height: 100%;
     width: 300px;
-    background: #999999;
+    background: #DDE1E2;
 	text-align: center;	
 }
 
