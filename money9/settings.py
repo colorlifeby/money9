@@ -142,7 +142,7 @@ STATIC_ROOT = '/home/box/webapps/money9/static/'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "main9bit@gmail.com"
-EMAIL_HOST_PASSWORD = "fKfnfy123456"
+EMAIL_HOST_PASSWORD = ""
 EMAIL_USE_TLS = True
 
 SERVER_EMAIL = EMAIL_HOST_USER
