@@ -138,3 +138,12 @@ STATIC_ROOT = '/home/box/webapps/money9/static/'
 #    "/home/box/webapps/money9/main9/static",
 #    "/home/box/.virtualenvs/money9/lib/python2.7/site-packages/django/contrib/admin/static",
 #]
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "main9bit@gmail.com"
+EMAIL_HOST_PASSWORD = "fKfnfy123456"
+EMAIL_USE_TLS = True
+
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

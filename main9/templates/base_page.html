@@ -17,8 +17,8 @@
 		<div id="userblock">
 			{% block userblock %}
 			{% if user.is_authenticated %}
-				<p>Пользователь:<br>
-				<span id="username">{{user}}</span></p> 
+				<p>Пользователь:</p>
+				<span id="username">{{user}}</span>
 				<p><a href="/logout/">Выход</a> / <a href="/userprofile/">Профиль</a></p>
 			{% endif %}			
 			{% endblock %}
